@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.mapper.SupplyMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.server.entity.Supply">
+        <id column="s_no" property="s_no" />
+        <result column="s_name" property="s_name" />
+        <result column="s_fmaddr" property="s_fmaddr" />
+        <result column="s_ivaddr" property="s_ivaddr" />
+        <result column="s_fmaddrcode" property="s_fmaddrcode" />
+        <result column="s_ivaddrcode" property="s_ivaddrcode" />
+        <result column="s_ivfirm" property="s_ivfirm" />
+        <result column="s_bona" property="s_bona" />
+        <result column="s_inna" property="s_inna" />
+        <result column="s_intel" property="s_intel" />
+        <result column="s_fmno" property="s_fmno" />
+        <result column="s_tel1" property="s_tel1" />
+        <result column="s_tel2" property="s_tel2" />
+        <result column="s_fax" property="s_fax" />
+        <result column="s_rang" property="s_rang" />
+        <result column="s_rank" property="s_rank" />
+        <result column="s_kndt" property="s_kndt" />
+        <result column="s_grade" property="s_grade" />
+        <result column="s_memo" property="s_memo" />
+        <result column="s_sname" property="s_sname" />
+        <result column="s_phon" property="s_phon" />
+        <result column="s_recday" property="s_recday" />
+        <result column="s_invalid" property="s_invalid" />
+        <result column="s_sort" property="s_sort" />
+        <result column="s_checkday" property="s_checkday" />
+        <result column="s_oldno" property="s_oldno" />
+        <result column="s_invokind" property="s_invokind" />
+        <result column="s_lastrecday" property="s_lastrecday" />
+        <result column="s_makeprocess" property="s_makeprocess" />
+        <result column="s_note" property="s_note" />
+        <result column="s_email" property="s_email" />
+        <result column="s_url" property="s_url" />
+        <result column="s_pfpamt" property="s_pfpamt" />
+        <result column="aiid_accounts" property="aiid_accounts" />
+        <result column="aiid_notes" property="aiid_notes" />
+        <result column="aiid_beforehand" property="aiid_beforehand" />
+        <result column="s_isdeliver" property="s_isdeliver" />
+        <result column="s_paycondition" property="s_paycondition" />
+        <result column="s_isbuild" property="s_isbuild" />
+        <result column="updatedt" property="updatedt" />
+        <result column="exportdt" property="exportdt" />
+        <result column="s_checkmonth" property="s_checkmonth" />
+        <result column="s_id" property="s_id" />
+        <result column="s_rate" property="s_rate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        s_no, s_name, s_fmaddr, s_ivaddr, s_fmaddrcode, s_ivaddrcode, s_ivfirm, s_bona, s_inna, s_intel, s_fmno, s_tel1, s_tel2, s_fax, s_rang, s_rank, s_kndt, s_grade, s_memo, s_sname, s_phon, s_recday, s_invalid, s_sort, s_checkday, s_oldno, s_invokind, s_lastrecday, s_makeprocess, s_note, s_email, s_url, s_pfpamt, aiid_accounts, aiid_notes, aiid_beforehand, s_isdeliver, s_paycondition, s_isbuild, updatedt, exportdt, s_checkmonth, s_id, s_rate
+    </sql>
+
+</mapper>

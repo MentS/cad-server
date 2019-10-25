@@ -1,0 +1,63 @@
+# mybatis 配置
+#mybatis-plus:
+##  mapper-locations: classpath: mybatis/mapper/*.xml
+#  mapper-locations:
+#    classpath: mybatis/mapper/*.xml
+#  type-aliases-package: com.server.entity
+#  configuration:
+#    map-underscore-to-camel-case: false
+
+
+mybatis-plus:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.server.entity
+  configuration:
+    map-underscore-to-camel-case: false
+
+#mybatis-plus:
+#  type-aliases-package: com.server.entity
+# 实体映射驼峰大小写转换
+#mybatis-plus:
+#  configuration:
+#    map-underscore-to-camel-case: false
+# 打印 SQL 执行语句
+#mybatis-plus.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl
+
+## -------------------------------------------------
+
+## SqlServer 配置
+#spring.datasource.url=jdbc:sqlserver://localhost:1433;databasename=LG
+#spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+#spring.datasource.username=sa
+#spring.datasource.password=root
+
+#spring:
+#  datasource:
+#    url: jdbc:sqlserver://localhost:1433;databasename=LG
+#    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    username: sa
+#    password: root
+
+
+# 日志
+#logging:
+#  level:
+#    ssm.app.mapper : debug
+
+#多数据源
+spring:
+  datasource:
+    dynamic:
+      primary: master #设置默认的数据源或者数据源组,默认值即为master
+      datasource:
+        master:
+          username: sa
+          password: root
+          driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+          url: jdbc:sqlserver://localhost:1433;databasename=LG
+        xa:
+          username: sa
+          password: root
+          driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+          url: jdbc:sqlserver://localhost:1433;databasename=xa
+

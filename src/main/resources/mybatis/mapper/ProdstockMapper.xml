@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.ProdstockMapper">
+  <resultMap id="BaseResultMap" type="com.server.entity.Prodstock">
+    <id column="p_id" jdbcType="INTEGER" property="p_id" />
+    <id column="p_depotno" jdbcType="VARCHAR" property="p_depotno" />
+    <id column="p_mpno" jdbcType="VARCHAR" property="p_mpno" />
+    <id column="p_supno" jdbcType="VARCHAR" property="p_supno" />
+    <result column="p_stock" jdbcType="DOUBLE" property="p_stock" />
+    <result column="p_orderdemand" jdbcType="DOUBLE" property="p_orderdemand" />
+    <result column="p_makedemand" jdbcType="DOUBLE" property="p_makedemand" />
+    <result column="p_purchaseqty" jdbcType="DOUBLE" property="p_purchaseqty" />
+    <result column="p_supplystock" jdbcType="DOUBLE" property="p_supplystock" />
+    <result column="p_safetystock" jdbcType="DOUBLE" property="p_safetystock" />
+  </resultMap>
+</mapper>

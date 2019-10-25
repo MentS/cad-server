@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.mapper.CustMapper">
+  <resultMap id="BaseResultMap" type="com.server.entity.Cust">
+    <id column="c_no" jdbcType="VARCHAR" property="c_no" />
+    <result column="c_name" jdbcType="VARCHAR" property="c_name" />
+    <result column="c_sname" jdbcType="VARCHAR" property="c_sname" />
+    <result column="c_fmaddr" jdbcType="VARCHAR" property="c_fmaddr" />
+    <result column="c_deaddr" jdbcType="VARCHAR" property="c_deaddr" />
+    <result column="c_ivaddr" jdbcType="VARCHAR" property="c_ivaddr" />
+    <result column="c_fmaddrcode" jdbcType="VARCHAR" property="c_fmaddrcode" />
+    <result column="c_deaddrcode" jdbcType="VARCHAR" property="c_deaddrcode" />
+    <result column="c_ivaddrcode" jdbcType="VARCHAR" property="c_ivaddrcode" />
+    <result column="c_ivfirm" jdbcType="VARCHAR" property="c_ivfirm" />
+    <result column="c_bona" jdbcType="VARCHAR" property="c_bona" />
+    <result column="c_inna" jdbcType="VARCHAR" property="c_inna" />
+    <result column="c_intel" jdbcType="VARCHAR" property="c_intel" />
+    <result column="c_fmno" jdbcType="VARCHAR" property="c_fmno" />
+    <result column="c_tel1" jdbcType="VARCHAR" property="c_tel1" />
+    <result column="c_tel2" jdbcType="VARCHAR" property="c_tel2" />
+    <result column="c_fax" jdbcType="VARCHAR" property="c_fax" />
+    <result column="c_range" jdbcType="DOUBLE" property="c_range" />
+    <result column="c_rank" jdbcType="CHAR" property="c_rank" />
+    <result column="c_kndt" jdbcType="TIMESTAMP" property="c_kndt" />
+    <result column="c_grade" jdbcType="VARCHAR" property="c_grade" />
+    <result column="c_email" jdbcType="VARCHAR" property="c_email" />
+    <result column="c_memo" jdbcType="VARCHAR" property="c_memo" />
+    <result column="c_phon" jdbcType="VARCHAR" property="c_phon" />
+    <result column="c_recday" jdbcType="TINYINT" property="c_recday" />
+    <result column="c_gatherday" jdbcType="TINYINT" property="c_gatherday" />
+    <result column="c_invalid" jdbcType="BIT" property="c_invalid" />
+    <result column="c_sort" jdbcType="INTEGER" property="c_sort" />
+    <result column="c_operationarea" jdbcType="VARCHAR" property="c_operationarea" />
+    <result column="c_operationcode" jdbcType="VARCHAR" property="c_operationcode" />
+    <result column="c_invokind" jdbcType="CHAR" property="c_invokind" />
+    <result column="c_oldno" jdbcType="VARCHAR" property="c_oldno" />
+    <result column="c_rebateqtyno" jdbcType="VARCHAR" property="c_rebateqtyno" />
+    <result column="c_id" jdbcType="INTEGER" property="c_id" />
+    <result column="c_salesid" jdbcType="INTEGER" property="c_salesid" />
+    <result column="c_custtype" jdbcType="VARCHAR" property="c_custtype" />
+    <result column="c_lastrecday" jdbcType="TIMESTAMP" property="c_lastrecday" />
+    <result column="c_discount" jdbcType="VARCHAR" property="c_discount" />
+    <result column="c_hasrebate" jdbcType="BIT" property="c_hasrebate" />
+    <result column="c_supno" jdbcType="VARCHAR" property="c_supno" />
+    <result column="c_letterAddress" jdbcType="INTEGER" property="c_letterAddress" />
+    <result column="c_checkterm" jdbcType="INTEGER" property="c_checkterm" />
+    <result column="c_paymode" jdbcType="VARCHAR" property="c_paymode" />
+    <result column="c_notradeday" jdbcType="SMALLINT" property="c_notradeday" />
+    <result column="c_usramt" jdbcType="DOUBLE" property="c_usramt" />
+    <result column="aiid_accounts" jdbcType="INTEGER" property="aiid_accounts" />
+    <result column="aiid_notes" jdbcType="INTEGER" property="aiid_notes" />
+    <result column="aiid_beforehand" jdbcType="INTEGER" property="aiid_beforehand" />
+    <result column="c_NoRecAmtNum" jdbcType="INTEGER" property="c_NoRecAmtNum" />
+    <result column="c_isbuild" jdbcType="BIT" property="c_isbuild" />
+    <result column="updatedt" jdbcType="TIMESTAMP" property="updatedt" />
+    <result column="exportdt" jdbcType="TIMESTAMP" property="exportdt" />
+    <result column="c_picpath" jdbcType="VARCHAR" property="c_picpath" />
+    <result column="c_rate" jdbcType="NUMERIC" property="c_rate" />
+    <result column="c_paycondition" jdbcType="LONGVARCHAR" property="c_paycondition" />
+  </resultMap>
+
+<!--  <select id="findOne" parameterType="java.lang.String" resultMap="BaseResultMap">-->
+<!--    select c_no, c_name, c_sname, c_fmaddr, c_deaddr, c_ivaddr, c_fmaddrcode, c_deaddrcode, -->
+<!--    c_ivaddrcode, c_ivfirm, c_bona, c_inna, c_intel, c_fmno, c_tel1, c_tel2, c_fax, c_range, -->
+<!--    c_rank, c_kndt, c_grade, c_email, c_memo, c_phon, c_recday, c_gatherday, c_invalid, -->
+<!--    c_sort, c_operationarea, c_operationcode, c_invokind, c_oldno, c_rebateqtyno, c_id, -->
+<!--    c_salesid, c_custtype, c_lastrecday, c_discount, c_hasrebate, c_supno, c_letterAddress, -->
+<!--    c_checkterm, c_paymode, c_notradeday, c_usramt, aiid_accounts, aiid_notes, aiid_beforehand, -->
+<!--    c_NoRecAmtNum, c_isbuild, updatedt, exportdt, c_picpath, c_rate, c_paycondition-->
+<!--    from cust-->
+<!--    where c_no = #{c_no,jdbcType=VARCHAR}-->
+<!--  </select>-->
+<!--  <select id="selectAll" resultMap="BaseResultMap">-->
+<!--    select c_no, c_name, c_sname, c_fmaddr, c_deaddr, c_ivaddr, c_fmaddrcode, c_deaddrcode, -->
+<!--    c_ivaddrcode, c_ivfirm, c_bona, c_inna, c_intel, c_fmno, c_tel1, c_tel2, c_fax, c_range, -->
+<!--    c_rank, c_kndt, c_grade, c_email, c_memo, c_phon, c_recday, c_gatherday, c_invalid, -->
+<!--    c_sort, c_operationarea, c_operationcode, c_invokind, c_oldno, c_rebateqtyno, c_id, -->
+<!--    c_salesid, c_custtype, c_lastrecday, c_discount, c_hasrebate, c_supno, c_letterAddress, -->
+<!--    c_checkterm, c_paymode, c_notradeday, c_usramt, aiid_accounts, aiid_notes, aiid_beforehand, -->
+<!--    c_NoRecAmtNum, c_isbuild, updatedt, exportdt, c_picpath, c_rate, c_paycondition-->
+<!--    from cust-->
+<!--  </select>-->
+
+
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.DepotMapper">
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.server.entity.Depot">
+        <id column="d_no" property="d_no" />
+        <result column="d_name" property="d_name" />
+        <result column="d_memo" property="d_memo" />
+        <result column="d_default" property="d_default" />
+        <result column="d_compid" property="d_compid" />
+        <result column="d_no1" property="d_no1" />
+        <result column="d_no2" property="d_no2" />
+        <result column="d_no3" property="d_no3" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        d_no, d_name, d_memo, d_default, d_compid, d_no1, d_no2, d_no3
+    </sql>
+
+    <update id="updateByPrimaryKey" parameterType="com.server.entity.Depot">
+    update depot
+    set
+      d_name = #{d_name,jdbcType=VARCHAR},
+      d_memo = #{d_memo,jdbcType=VARCHAR},
+      d_default = #{d_default,jdbcType=BIT},
+      d_compid = #{d_compid,jdbcType=INTEGER},
+      d_no1 = #{d_no1,jdbcType=VARCHAR},
+      d_no2 = #{d_no2,jdbcType=VARCHAR},
+      d_no3 = #{d_no3,jdbcType=VARCHAR}
+    where d_no = #{d_no,jdbcType=VARCHAR}
+  </update>
+
+
+</mapper>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.mapper.ProductMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.server.entity.Product">
+        <id column="p_id" property="p_id" />
+        <result column="p_no" property="p_no" />
+        <result column="p_spec" property="p_spec" />
+        <result column="p_unitid" property="p_unitid" />
+        <result column="p_kindid" property="p_kindid" />
+        <result column="p_phon" property="p_phon" />
+        <result column="p_invalid" property="p_invalid" />
+        <result column="p_sort" property="p_sort" />
+        <result column="p_memo" property="p_memo" />
+        <result column="p_material" property="p_material" />
+        <result column="p_length" property="p_length" />
+        <result column="p_height" property="p_height" />
+        <result column="p_width" property="p_width" />
+        <result column="p_size" property="p_size" />
+        <result column="p_pricekind" property="p_pricekind" />
+        <result column="p_priceUnitid" property="p_priceUnitid" />
+        <result column="p_brand" property="p_brand" />
+        <result column="p_PicFileName" property="p_PicFileName" />
+        <result column="p_imgId" property="p_imgId" />
+        <result column="p_price" property="p_price" />
+        <result column="p_bomid" property="p_bomid" />
+        <result column="p_cost" property="p_cost" />
+        <result column="p_location" property="p_location" />
+        <result column="p_goodtype" property="p_goodtype" />
+        <result column="p_stock" property="p_stock" />
+        <result column="p_suppmaterialno" property="p_suppmaterialno" />
+        <result column="p_name_old" property="p_name_old" />
+        <result column="p_name" property="p_name" />
+        <result column="p_custfileno" property="p_custfileno" />
+        <result column="p_mfrnote" property="p_mfrnote" />
+        <result column="p_pricemode" property="p_pricemode" />
+        <result column="p_stockmode" property="p_stockmode" />
+        <result column="p_unitweight" property="p_unitweight" />
+        <result column="p_minpurqty" property="p_minpurqty" />
+        <result column="p_memo2" property="p_memo2" />
+        <result column="p_isReportPrice" property="p_isReportPrice" />
+        <result column="p_receivePic" property="p_receivePic" />
+        <result column="p_createday" property="p_createday" />
+        <result column="p_depotNo" property="p_depotNo" />
+        <result column="p_lastday" property="p_lastday" />
+        <result column="p_aiid" property="p_aiid" />
+        <result column="p_desingimg" property="p_desingimg" />
+        <result column="p_version" property="p_version" />
+        <result column="p_avecost" property="p_avecost" />
+        <result column="p_bomcost" property="p_bomcost" />
+        <result column="p_QualityFilepath" property="p_QualityFilepath" />
+        <result column="p_NCcode" property="p_NCcode" />
+        <result column="p_torch" property="p_torch" />
+        <result column="p_repeat" property="p_repeat" />
+        <result column="p_invpdname" property="p_invpdname" />
+        <result column="p_inovprodid" property="p_inovprodid" />
+        <result column="p_usespec" property="p_usespec" />
+        <result column="p_designmemo" property="p_designmemo" />
+        <result column="p_mfrmemo" property="p_mfrmemo" />
+        <result column="p_realweight" property="p_realweight" />
+        <result column="p_machinekind" property="p_machinekind" />
+        <result column="p_tempid" property="p_tempid" />
+        <result column="p_custpicfilepath" property="p_custpicfilepath" />
+        <result column="p_file" property="p_file" />
+        <result column="p_PicFileName2" property="p_PicFileName2" />
+        <result column="p_custid" property="p_custid" />
+        <result column="p_cyprice" property="p_cyprice" />
+        <result column="p_3DImageID" property="p_3DImageID" />
+        <result column="p_ditch" property="p_ditch" />
+        <result column="p_templenimgid" property="p_templenimgid" />
+        <result column="p_tempwidthimgid" property="p_tempwidthimgid" />
+        <result column="p_widthtempid" property="p_widthtempid" />
+        <result column="p_radius" property="p_radius" />
+        <result column="p_diameter" property="p_diameter" />
+        <result column="p_storage" property="p_storage" />
+        <result column="p_surfacenature" property="p_surfacenature" />
+        <result column="p_badrate" property="p_badrate" />
+        <result column="p_isCoiledMaterial" property="p_isCoiledMaterial" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        p_no, p_spec, p_unitid, p_kindid, p_phon, p_invalid, p_sort, p_id, p_memo, p_material, p_length, p_height, p_width, p_size, p_pricekind, p_priceUnitid, p_brand, p_PicFileName, p_imgId, p_price, p_bomid, p_cost, p_location, p_goodtype, p_stock, p_suppmaterialno, p_name_old, p_name, p_custfileno, p_mfrnote, p_pricemode, p_stockmode, p_unitweight, p_minpurqty, p_memo2, p_isReportPrice, p_receivePic, p_createday, p_depotNo, p_lastday, p_aiid, p_desingimg, p_version, p_avecost, p_bomcost, p_QualityFilepath, p_NCcode, p_torch, p_repeat, p_invpdname, p_inovprodid, p_usespec, p_designmemo, p_mfrmemo, p_realweight, p_machinekind, p_tempid, p_custpicfilepath, p_file, p_PicFileName2, p_custid, p_cyprice, p_3DImageID, p_ditch, p_templenimgid, p_tempwidthimgid, p_widthtempid, p_radius, p_diameter, p_storage, p_surfacenature, p_badrate, p_isCoiledMaterial
+    </sql>
+
+    <!-- statementType="CALLABLE" 调用存储过程   -->
+    <select id="selectProduct" parameterType="java.lang.String" statementType="CALLABLE"  resultType="map">
+        EXEC getProductBom #{bomId}
+    </select>
+
+    <select id="selectProductBom" parameterType="java.lang.String"  resultType="map">
+        select b_id,b_parentBomId from bom where b_id=#{b_id}
+    </select>
+
+    <!--在 xapdm 中根据 fpdno 查询产品信息 根据 fxstn 阶层排序 -->
+    <select id="selectXA" parameterType="java.lang.String"  resultType="map">
+        SELECT fxstn from xapdm WHERE funim =
+        (SELECT top 1 funim from xapdm WHERE fpdno = #{fpdno} ORDER BY funim DESC ) ORDER BY fxstn
+    </select>
+
+
+
+</mapper>

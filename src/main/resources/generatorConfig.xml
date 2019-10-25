@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="H2Tables" targetRuntime="MyBatis3Simple">
+        <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin" />
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+
+        <!--   去掉注释    -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <!--  数据库连接   -->
+        <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+                        connectionURL="jdbc:sqlserver://127.0.0.1:1433;Database=LG"
+                        userId="sa"
+                        password="root">
+        </jdbcConnection>
+
+        <!--  entity 层生成的位置   -->
+        <javaModelGenerator targetPackage="com.server.entity"
+                            targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!--  sql mapper 映射文件的位置  -->
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="./src/main/resources/mybatis/">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!--  mapper 接口的位置  -->
+<!--        <javaClientGenerator type="MIXEDMAPPER"-->
+<!--                             targetPackage="com.server.mapper"-->
+<!--                             targetProject="./src/main/java">-->
+<!--            <property name="enableSubPackages" value="true" />-->
+<!--        </javaClientGenerator>-->
+
+        <table tableName="depot" domainObjectName="Depot"  enableCountByExample="false"  >
+            <!-- useActualColumnNames 指定生成实体的字段名是否转换为驼峰
+                 true ：使用数据库默认的名字
+                 false ：将下划线转换为驼峰     -->
+            <property name="useActualColumnNames" value="true" />
+        </table>
+    </context>
+</generatorConfiguration>
