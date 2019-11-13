@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.mapper.BOM_ProcessMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.server.entity.BOM_Process">
+        <id column="bp_id" property="bp_id" />
+        <result column="bp_itemid" property="bp_itemid" />
+        <result column="bp_no" property="bp_no" />
+        <result column="bp_process" property="bp_process" />
+        <result column="bp_department" property="bp_department" />
+        <result column="bp_method" property="bp_method" />
+        <result column="bp_seq" property="bp_seq" />
+        <result column="bp_cost" property="bp_cost" />
+        <result column="bp_standardtime" property="bp_standardtime" />
+        <result column="bp_mm" property="bp_mm" />
+        <result column="bp_memo" property="bp_memo" />
+        <result column="bp_unitcapacity" property="bp_unitcapacity" />
+        <result column="bp_preworktime" property="bp_preworktime" />
+        <result column="bp_strokes" property="bp_strokes" />
+        <result column="bp_istransfer" property="bp_istransfer" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        bp_id, bp_itemid, bp_no, bp_process, bp_department, bp_method, bp_seq, bp_cost, bp_standardtime, bp_mm, bp_memo, bp_unitcapacity, bp_preworktime, bp_strokes, bp_istransfer
+    </sql>
+
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.mapper.BomMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.server.entity.Bom">
+        <id column="b_id" property="b_id" />
+        <result column="b_prodid" property="b_prodid" />
+        <result column="b_qty" property="b_qty" />
+        <result column="b_parentBomId" property="b_parentBomId" />
+        <result column="b_description" property="b_description" />
+        <result column="b_fineno" property="b_fineno" />
+        <result column="b_price" property="b_price" />
+        <result column="b_priceID" property="b_priceID" />
+        <result column="b_processID" property="b_processID" />
+        <result column="b_process" property="b_process" />
+        <result column="b_material" property="b_material" />
+        <result column="b_width" property="b_width" />
+        <result column="b_MfrDetail" property="b_MfrDetail" />
+        <result column="b_Surface" property="b_Surface" />
+        <result column="b_PicFileName" property="b_PicFileName" />
+        <result column="b_color" property="b_color" />
+        <result column="b_standBuildTime" property="b_standBuildTime" />
+        <result column="b_maincolor" property="b_maincolor" />
+        <result column="b_isPointweld" property="b_isPointweld" />
+        <result column="b_isProd" property="b_isProd" />
+        <result column="b_isAttach" property="b_isAttach" />
+        <result column="b_isMRP" property="b_isMRP" />
+        <result column="b_isFetchDraw" property="b_isFetchDraw" />
+        <result column="b_note1" property="b_note1" />
+        <result column="b_note2" property="b_note2" />
+        <result column="b_note3" property="b_note3" />
+        <result column="b_note4" property="b_note4" />
+        <result column="b_note5" property="b_note5" />
+        <result column="b_note6" property="b_note6" />
+        <result column="b_note7" property="b_note7" />
+        <result column="b_note8" property="b_note8" />
+        <result column="b_note9" property="b_note9" />
+        <result column="b_note10" property="b_note10" />
+        <result column="b_reqProcess" property="b_reqProcess" />
+        <result column="b_isMaterial" property="b_isMaterial" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        b_id, b_prodid, b_qty, b_parentBomId, b_description, b_fineno, b_price, b_priceID, b_processID, b_process, b_material, b_width, b_MfrDetail, b_Surface, b_PicFileName, b_color, b_standBuildTime, b_maincolor, b_isPointweld, b_isProd, b_isAttach, b_isMRP, b_isFetchDraw, b_note1, b_note2, b_note3, b_note4, b_note5, b_note6, b_note7, b_note8, b_note9, b_note10, b_reqProcess, b_isMaterial
+    </sql>
+
+</mapper>
