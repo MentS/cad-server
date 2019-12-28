@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
  * @since 2019-10-12
  */
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/depot")
 public class DepotController {
 

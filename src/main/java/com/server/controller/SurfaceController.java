@@ -1,6 +1,7 @@
 package com.server.controller;
 
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2019-10-29
  */
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/code/surface")
 public class SurfaceController {
 

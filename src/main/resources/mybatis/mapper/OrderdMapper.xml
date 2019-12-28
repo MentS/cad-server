@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.mapper.OrderdMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.server.entity.Orderd">
+        <id column="autono" property="autono" />
+        <result column="o_code" property="o_code" />
+        <result column="o_status" property="o_status" />
+        <result column="itemno" property="itemno" />
+        <result column="itemno2" property="itemno2" />
+        <result column="o_targetdate" property="o_targetdate" />
+        <result column="o_qty" property="o_qty" />
+        <result column="o_price" property="o_price" />
+        <result column="o_amt" property="o_amt" />
+        <result column="o_memo" property="o_memo" />
+        <result column="o_billqty" property="o_billqty" />
+        <result column="o_over" property="o_over" />
+        <result column="o_bomid" property="o_bomid" />
+        <result column="o_bomlevel" property="o_bomlevel" />
+        <result column="o_bomparentid" property="o_bomparentid" />
+        <result column="o_bomlevels" property="o_bomlevels" />
+        <result column="o_bom_root_bom_id" property="o_bom_root_bom_id" />
+        <result column="o_bom_hasChild" property="o_bom_hasChild" />
+        <result column="o_designer" property="o_designer" />
+        <result column="o_sales" property="o_sales" />
+        <result column="o_needDesign" property="o_needDesign" />
+        <result column="o_makeOrderQty" property="o_makeOrderQty" />
+        <result column="o_startdesigntime" property="o_startdesigntime" />
+        <result column="o_endesigntime" property="o_endesigntime" />
+        <result column="o_custFileNo" property="o_custFileNo" />
+        <result column="o_ismaterial" property="o_ismaterial" />
+        <result column="o_bomqty" property="o_bomqty" />
+        <result column="o_designstatus" property="o_designstatus" />
+        <result column="o_prodno_old" property="o_prodno_old" />
+        <result column="o_pid" property="o_pid" />
+        <result column="o_makeOrderChild" property="o_makeOrderChild" />
+        <result column="o_process" property="o_process" />
+        <result column="o_memo01" property="o_memo01" />
+        <result column="o_memo02" property="o_memo02" />
+        <result column="o_memo03" property="o_memo03" />
+        <result column="o_memo04" property="o_memo04" />
+        <result column="o_version" property="o_version" />
+        <result column="o_processid" property="o_processid" />
+        <result column="o_quotecode" property="o_quotecode" />
+        <result column="o_quoteautono" property="o_quoteautono" />
+        <result column="o_width" property="o_width" />
+        <result column="o_length" property="o_length" />
+        <result column="o_priceUnit" property="o_priceUnit" />
+        <result column="o_weightUnit" property="o_weightUnit" />
+        <result column="o_singleWeight" property="o_singleWeight" />
+        <result column="o_qtyWeight" property="o_qtyWeight" />
+        <result column="o_NCcode" property="o_NCcode" />
+        <result column="o_innerNO" property="o_innerNO" />
+        <result column="o_torch" property="o_torch" />
+        <result column="o_offerspec" property="o_offerspec" />
+        <result column="o_repeat" property="o_repeat" />
+        <result column="o_usespec" property="o_usespec" />
+        <result column="o_cutlength" property="o_cutlength" />
+        <result column="o_cuthole" property="o_cuthole" />
+        <result column="o_holeweight" property="o_holeweight" />
+        <result column="o_machineno" property="o_machineno" />
+        <result column="o_priceid" property="o_priceid" />
+        <result column="o_totalweight" property="o_totalweight" />
+        <result column="o_employRate" property="o_employRate" />
+        <result column="o_holeEmploy" property="o_holeEmploy" />
+        <result column="o_spareMaterial" property="o_spareMaterial" />
+        <result column="o_makedqty" property="o_makedqty" />
+        <result column="o_isPrize" property="o_isPrize" />
+        <result column="o_isbill" property="o_isbill" />
+        <result column="o_isShape" property="o_isShape" />
+        <result column="o_bendimgid" property="o_bendimgid" />
+        <result column="o_designtargetdate" property="o_designtargetdate" />
+        <result column="o_designprocessid" property="o_designprocessid" />
+        <result column="o_designprocess" property="o_designprocess" />
+        <result column="o_MakedNotInStock" property="o_MakedNotInStock" />
+        <result column="itemno_ori" property="itemno_ori" />
+        <result column="o_cyid" property="o_cyid" />
+        <result column="o_cyrate" property="o_cyrate" />
+        <result column="o_cyprice" property="o_cyprice" />
+        <result column="o_cyamt" property="o_cyamt" />
+        <result column="o_prodprice" property="o_prodprice" />
+        <result column="o_proddsnt" property="o_proddsnt" />
+        <result column="o_discountprice" property="o_discountprice" />
+        <result column="o_originalstock" property="o_originalstock" />
+        <result column="o_returnweight" property="o_returnweight" />
+        <result column="o_designTargetHH" property="o_designTargetHH" />
+        <result column="o_designScheduleDate" property="o_designScheduleDate" />
+        <result column="o_refprice" property="o_refprice" />
+        <result column="o_refamt" property="o_refamt" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        autono, o_code, o_status, itemno, itemno2, o_targetdate, o_qty, o_price, o_amt, o_memo, o_billqty, o_over, o_bomid, o_bomlevel, o_bomparentid, o_bomlevels, o_bom_root_bom_id, o_bom_hasChild, o_designer, o_sales, o_needDesign, o_makeOrderQty, o_startdesigntime, o_endesigntime, o_custFileNo, o_ismaterial, o_bomqty, o_designstatus, o_prodno_old, o_pid, o_makeOrderChild, o_process, o_memo01, o_memo02, o_memo03, o_memo04, o_version, o_processid, o_quotecode, o_quoteautono, o_width, o_length, o_priceUnit, o_weightUnit, o_singleWeight, o_qtyWeight, o_NCcode, o_innerNO, o_torch, o_offerspec, o_repeat, o_usespec, o_cutlength, o_cuthole, o_holeweight, o_machineno, o_priceid, o_totalweight, o_employRate, o_holeEmploy, o_spareMaterial, o_makedqty, o_isPrize, o_isbill, o_isShape, o_bendimgid, o_designtargetdate, o_designprocessid, o_designprocess, o_MakedNotInStock, itemno_ori, o_cyid, o_cyrate, o_cyprice, o_cyamt, o_prodprice, o_proddsnt, o_discountprice, o_originalstock, o_returnweight, o_designTargetHH, o_designScheduleDate, o_refprice, o_refamt
+    </sql>
+
+    <select id="selectList" resultType="map">
+        SELECT
+        d.o_code,
+        m.o_date,
+        m.o_custno,
+        c.c_sname,
+        m.o_user,
+        p.p_no AS o_prodno,
+        p_name,
+        d.o_targetdate,
+        o_qty,
+        e_name AS designer,
+        o_bomid,
+        md.m_isover,
+        o_bomlevel,
+        (
+        isnull( mop.mp_makedqty, 0 )) AS mp_makedqty,
+        mop.mp_badqty,
+        CAST (
+        '' AS VARCHAR ( 29 )) AS mp_process,
+        md.m_code,
+        mp_name,
+        CAST (( d.o_targetdate- m.o_date ) AS INT ) AS orderdays,
+        CAST (
+        '' AS VARCHAR ( 1000 )) AS prodprogress,
+        p_PicFileName,
+        d.autono,
+        md.autono AS mkautono,
+        CAST (
+        CASE
+
+        WHEN ( getdate() - d.o_targetdate ) >= 0 THEN
+        ( getdate() - d.o_targetdate ) ELSE 0
+        END AS INT
+        ) AS overduedays
+        FROM
+        orderd d
+        LEFT JOIN orderm m ON d.o_code = m.o_code
+        LEFT JOIN product p ON d.o_pid = p.p_id
+        LEFT JOIN cust c ON m.o_custno = c.c_no
+        LEFT JOIN employee e ON d.o_designer = e.e_autoid
+        LEFT JOIN makeorderdetail AS md ON d.o_bomid= md.m_bomid
+        LEFT JOIN makeorder AS mm ON md.m_code= mm.m_code
+        LEFT JOIN (
+        SELECT
+        d2.*
+        FROM
+        ( SELECT MAX ( mp_itemno ) AS mp_itemno, mp_modid FROM makeorderprocess GROUP BY mp_modid ) AS d1
+        LEFT JOIN makeorderprocess AS d2 ON d1.mp_modid= d2.mp_modid
+        AND d1.mp_itemno= d2.mp_itemno
+        ) AS mop ON md.autono= mop.mp_modid
+        LEFT JOIN makeprocess AS mp ON mop.mp_process= mp.mp_no
+        LEFT JOIN makeorderprocess AS premop ON md.autono= premop.mp_modid
+        AND mop.mp_itemno= premop.mp_itemno+ 1
+        LEFT JOIN makeorderprocess AS firstmop ON md.autono= firstmop.mp_modid
+        AND firstmop.mp_itemno= 1
+        LEFT JOIN (
+        SELECT
+        d2.*
+        FROM
+        ( SELECT MAX ( mp_itemno ) AS mp_itemno, mp_modid FROM makeorderprocess GROUP BY mp_modid ) AS d1
+        LEFT JOIN makeorderprocess AS d2 ON d1.mp_modid= d2.mp_modid
+        AND d1.mp_itemno= d2.mp_itemno
+        ) AS lastmop ON md.autono= lastmop.mp_modid
+        WHERE
+        isnull( m.o_invalid, 0 ) = 0
+        AND isnull( m.o_over, 0 ) = 0
+        AND P.P_kindid <![CDATA[ <= ]]>  3
+        AND d.o_targetdate <![CDATA[ >= ]]>  '2019/06/27'
+        AND d.o_targetdate <![CDATA[ <= ]]> '2019/06/27'
+        ORDER BY
+        d.o_targetdate DESC,
+        d.o_code,
+        d.itemno
+    </select>
+
+    <select id="test" resultType="com.server.VO.OrderdVO">
+        SELECT
+        d.o_code,
+        m.o_date,
+        m.o_custno,
+        c.c_sname,
+        m.o_user,
+        p.p_no AS o_prodno,
+        p_name,
+        d.o_targetdate,
+        o_qty,
+        e_name AS designer,
+        o_bomid,
+        md.m_isover,
+        o_bomlevel,
+        (
+        isnull( mop.mp_makedqty, 0 )) AS mp_makedqty,
+        mop.mp_badqty,
+        CAST (
+        '' AS VARCHAR ( 29 )) AS mp_process,
+        md.m_code,
+        mp_name,
+        CAST (( d.o_targetdate- m.o_date ) AS INT ) AS orderdays,
+        CAST (
+        '' AS VARCHAR ( 1000 )) AS prodprogress,
+        p_PicFileName,
+        d.autono,
+        md.autono AS mkautono,
+        CAST (
+        CASE
+
+        WHEN ( getdate() - d.o_targetdate ) >= 0 THEN
+        ( getdate() - d.o_targetdate ) ELSE 0
+        END AS INT
+        ) AS overduedays
+        FROM
+        orderd d
+        LEFT JOIN orderm m ON d.o_code = m.o_code
+        LEFT JOIN product p ON d.o_pid = p.p_id
+        LEFT JOIN cust c ON m.o_custno = c.c_no
+        LEFT JOIN employee e ON d.o_designer = e.e_autoid
+        LEFT JOIN makeorderdetail AS md ON d.o_bomid= md.m_bomid
+        LEFT JOIN makeorder AS mm ON md.m_code= mm.m_code
+        LEFT JOIN (
+        SELECT
+        d2.*
+        FROM
+        ( SELECT MAX ( mp_itemno ) AS mp_itemno, mp_modid FROM makeorderprocess GROUP BY mp_modid ) AS d1
+        LEFT JOIN makeorderprocess AS d2 ON d1.mp_modid= d2.mp_modid
+        AND d1.mp_itemno= d2.mp_itemno
+        ) AS mop ON md.autono= mop.mp_modid
+        LEFT JOIN makeprocess AS mp ON mop.mp_process= mp.mp_no
+        LEFT JOIN makeorderprocess AS premop ON md.autono= premop.mp_modid
+        AND mop.mp_itemno= premop.mp_itemno+ 1
+        LEFT JOIN makeorderprocess AS firstmop ON md.autono= firstmop.mp_modid
+        AND firstmop.mp_itemno= 1
+        LEFT JOIN (
+        SELECT
+        d2.*
+        FROM
+        ( SELECT MAX ( mp_itemno ) AS mp_itemno, mp_modid FROM makeorderprocess GROUP BY mp_modid ) AS d1
+        LEFT JOIN makeorderprocess AS d2 ON d1.mp_modid= d2.mp_modid
+        AND d1.mp_itemno= d2.mp_itemno
+        ) AS lastmop ON md.autono= lastmop.mp_modid
+        WHERE
+        isnull( m.o_invalid, 0 ) = 0
+        AND isnull( m.o_over, 0 ) = 0
+        AND P.P_kindid <![CDATA[ <= ]]>  3
+        ORDER BY
+        d.o_targetdate DESC,
+        d.o_code,
+        d.itemno
+    </select>
+</mapper>

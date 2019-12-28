@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.mapper.MakeOrderProcessMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.server.entity.MakeOrderProcess">
+        <id column="mp_id" property="mp_id" />
+        <result column="mp_MODid" property="mp_MODid" />
+        <result column="mp_barcode" property="mp_barcode" />
+        <result column="mp_itemno" property="mp_itemno" />
+        <result column="mp_seq" property="mp_seq" />
+        <result column="mp_method" property="mp_method" />
+        <result column="mp_department" property="mp_department" />
+        <result column="mp_process" property="mp_process" />
+        <result column="mp_makedqty" property="mp_makedqty" />
+        <result column="mp_beqty" property="mp_beqty" />
+        <result column="mp_typesetqty" property="mp_typesetqty" />
+        <result column="mp_req_qty" property="mp_req_qty" />
+        <result column="mp_stockqty" property="mp_stockqty" />
+        <result column="mp_over" property="mp_over" />
+        <result column="mp_sortondepart" property="mp_sortondepart" />
+        <result column="mp_dueDay" property="mp_dueDay" />
+        <result column="mp_memo" property="mp_memo" />
+        <result column="mp_mac" property="mp_mac" />
+        <result column="mp_AssignedQty" property="mp_AssignedQty" />
+        <result column="mp_starttime" property="mp_starttime" />
+        <result column="mp_endtime" property="mp_endtime" />
+        <result column="mp_status" property="mp_status" />
+        <result column="mp_machineno" property="mp_machineno" />
+        <result column="mp_isready" property="mp_isready" />
+        <result column="mp_usedqtynextp" property="mp_usedqtynextp" />
+        <result column="mp_singletimes" property="mp_singletimes" />
+        <result column="mp_tottimes" property="mp_tottimes" />
+        <result column="mp_repairqty" property="mp_repairqty" />
+        <result column="mp_repairmpid" property="mp_repairmpid" />
+        <result column="mp_Assignqty" property="mp_Assignqty" />
+        <result column="mp_typesetover" property="mp_typesetover" />
+        <result column="mp_badqty" property="mp_badqty" />
+        <result column="mp_prempid" property="mp_prempid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        mp_MODid, mp_barcode, mp_itemno, mp_seq, mp_method, mp_department, mp_process, mp_makedqty, mp_beqty, mp_id, mp_typesetqty, mp_req_qty, mp_stockqty, mp_over, mp_sortondepart, mp_dueDay, mp_memo, mp_mac, mp_AssignedQty, mp_starttime, mp_endtime, mp_status, mp_machineno, mp_isready, mp_usedqtynextp, mp_singletimes, mp_tottimes, mp_repairqty, mp_repairmpid, mp_Assignqty, mp_typesetover, mp_badqty, mp_prempid
+    </sql>
+
+    <select id="selectProcess" resultType="map">
+        SELECT
+            mop.mp_itemno,
+            mop.mp_process,
+            mp.mp_name,
+            SUM ( mp_beqty ) AS beqty,
+            SUM (
+            isnull( mp_makedqty, 0 )) AS mp_makedqty,
+            SUM (
+            isnull( Premakedqty, 0 )) AS Premakedqty,
+            isnull( mr.mr_mpid, 0 ) AS MR,
+            mod.m_bomid AS BOMID,
+            mop.mp_method,
+            mod.m_code,
+            mop.mp_barcode,
+            isnull( mr.mr_starttime, 0 ) AS mr_starttime
+        FROM
+            MakeOrderProcess mop
+            LEFT JOIN ( SELECT ( isnull( mp_makedqty, 0 ) + isnull( mp_repairqty, 0 )) AS Premakedqty, mp_modid, mp_itemno FROM MakeOrderProcess ) AS premop ON mop.mp_modid= premop.mp_modid
+            AND mop.mp_itemno- 1 = premop.mp_itemno
+            LEFT JOIN MakeOrderDetail mod ON mop.mp_modid = mod.autono
+            LEFT JOIN MakeOrder AS m ON mod.m_code= m.m_code
+            LEFT JOIN makeprocess mp ON mop.mp_process = mp.mp_no
+            LEFT JOIN ( SELECT mr_mpid, MIN ( mr_starttime ) AS mr_starttime FROM MakedRecord a GROUP BY mr_mpid ) AS mr ON mop.mp_id = mr.mr_mpid
+        WHERE
+            isnull( mod.m_isOver, 0 ) = 0
+            AND isnull( m.m_pause, 0 ) = 0
+            AND isnull( m.m_cancel, 0 ) = 0
+            AND m.m_code= #{mcode}
+            AND (
+            mod.m_bomid IN ( #{bomid} ))
+        GROUP BY
+            mop.mp_itemno,
+            mop.mp_process,
+            mp.mp_name,
+            mr.mr_mpid,
+            mod.m_bomid,
+            mop.mp_method,
+            mod.m_code,
+            mop.mp_barcode,
+            mr.mr_starttime
+        ORDER BY
+            mod.m_bomid,
+            mop.mp_itemno
+    </select>
+
+</mapper>

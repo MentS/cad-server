@@ -20,6 +20,7 @@ import java.util.List;
  * @date 2019/9/20
  */
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/cust")
 public class CustController {
 

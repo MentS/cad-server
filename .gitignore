@@ -6,6 +6,8 @@ target/
 
 ### 忽略 code mybatis-plus generator 生成的文件 ###
 /src/main/java/com/server/code/
+/src/main/resources/static/
+
 
 ### STS ###
 .apt_generated

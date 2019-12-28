@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author SH
- * @since 2019-10-25
+ * @since 2019-12-26
  */
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/code/bom")
-public class BomController {
+@RequestMapping("/CODE/makeOrderProcess")
+public class MakeOrderProcessController {
 
 }

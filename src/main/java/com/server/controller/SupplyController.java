@@ -23,6 +23,7 @@ import java.util.List;
  * @since 2019-09-25
  */
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/supply")
 public class SupplyController {
 

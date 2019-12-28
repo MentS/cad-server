@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.mapper.OrdermMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.server.entity.Orderm">
+        <id column="o_code" property="o_code" />
+        <result column="o_date" property="o_date" />
+        <result column="o_custno" property="o_custno" />
+        <result column="o_custbillcode" property="o_custbillcode" />
+        <result column="o_user" property="o_user" />
+        <result column="o_targetdate" property="o_targetdate" />
+        <result column="o_invokind" property="o_invokind" />
+        <result column="o_hastax" property="o_hastax" />
+        <result column="o_detailamt" property="o_detailamt" />
+        <result column="o_taxamt" property="o_taxamt" />
+        <result column="o_totamt" property="o_totamt" />
+        <result column="o_earnest" property="o_earnest" />
+        <result column="o_memo" property="o_memo" />
+        <result column="o_invalid" property="o_invalid" />
+        <result column="o_over" property="o_over" />
+        <result column="updatedt" property="updatedt" />
+        <result column="islocked" property="islocked" />
+        <result column="lockedid" property="lockedid" />
+        <result column="o_deliveryAddr" property="o_deliveryAddr" />
+        <result column="o_subCustid" property="o_subCustid" />
+        <result column="o_type" property="o_type" />
+        <result column="o_coderefer" property="o_coderefer" />
+        <result column="o_billdate" property="o_billdate" />
+        <result column="o_billyymm" property="o_billyymm" />
+        <result column="o_reccode" property="o_reccode" />
+        <result column="acc_vounotemp" property="acc_vounotemp" />
+        <result column="acc_vouno" property="acc_vouno" />
+        <result column="acc_need2voutemp" property="acc_need2voutemp" />
+        <result column="o_iscase" property="o_iscase" />
+        <result column="compid" property="compid" />
+        <result column="o_inna" property="o_inna" />
+        <result column="o_shapespec" property="o_shapespec" />
+        <result column="o_bomno" property="o_bomno" />
+        <result column="o_makeno" property="o_makeno" />
+        <result column="o_salesperson" property="o_salesperson" />
+        <result column="o_sumweight" property="o_sumweight" />
+        <result column="o_totalweightDecimal" property="o_totalweightDecimal" />
+        <result column="o_memo2" property="o_memo2" />
+        <result column="o_notaxamt" property="o_notaxamt" />
+        <result column="o_delivery" property="o_delivery" />
+        <result column="o_assistantid" property="o_assistantid" />
+        <result column="o_custbilldate" property="o_custbilldate" />
+        <result column="o_planyymm" property="o_planyymm" />
+        <result column="o_cyid" property="o_cyid" />
+        <result column="o_cyrate" property="o_cyrate" />
+        <result column="o_cyamt" property="o_cyamt" />
+        <result column="o_laserdiscount" property="o_laserdiscount" />
+        <result column="o_processmemo" property="o_processmemo" />
+        <result column="o_processsort" property="o_processsort" />
+        <result column="O_RNS_SYM" property="O_RNS_SYM" />
+        <result column="o_correlationfile" property="o_correlationfile" />
+        <result column="o_custdiscount" property="o_custdiscount" />
+        <result column="o_checker" property="o_checker" />
+        <result column="o_memo3" property="o_memo3" />
+        <result column="o_urgent" property="o_urgent" />
+        <result column="o_rate" property="o_rate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        o_code, o_date, o_custno, o_custbillcode, o_user, o_targetdate, o_invokind, o_hastax, o_detailamt, o_taxamt, o_totamt, o_earnest, o_memo, o_invalid, o_over, updatedt, islocked, lockedid, o_deliveryAddr, o_subCustid, o_type, o_coderefer, o_billdate, o_billyymm, o_reccode, acc_vounotemp, acc_vouno, acc_need2voutemp, o_iscase, compid, o_inna, o_shapespec, o_bomno, o_makeno, o_salesperson, o_sumweight, o_totalweightDecimal, o_memo2, o_notaxamt, o_delivery, o_assistantid, o_custbilldate, o_planyymm, o_cyid, o_cyrate, o_cyamt, o_laserdiscount, o_processmemo, o_processsort, O_RNS_SYM, o_correlationfile, o_custdiscount, o_checker, o_memo3, o_urgent, o_rate
+    </sql>
+
+</mapper>

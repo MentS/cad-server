@@ -18,7 +18,7 @@
 
         <!--  数据库连接   -->
         <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-                        connectionURL="jdbc:sqlserver://127.0.0.1:1433;Database=LG"
+                        connectionURL="jdbc:sqlserver://127.0.0.1:1433;Database=LJ"
                         userId="sa"
                         password="root">
         </jdbcConnection>
@@ -43,7 +43,7 @@
 <!--            <property name="enableSubPackages" value="true" />-->
 <!--        </javaClientGenerator>-->
 
-        <table tableName="depot" domainObjectName="Depot"  enableCountByExample="false"  >
+        <table tableName="orderd" domainObjectName="orderd"  enableCountByExample="false"  >
             <!-- useActualColumnNames 指定生成实体的字段名是否转换为驼峰
                  true ：使用数据库默认的名字
                  false ：将下划线转换为驼峰     -->

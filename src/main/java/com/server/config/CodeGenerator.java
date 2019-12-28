@@ -65,7 +65,7 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:sqlserver://localhost:1433;databasename=LG");
+        dsc.setUrl("jdbc:sqlserver://localhost:1433;databasename=LJ");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         dsc.setUsername("sa");

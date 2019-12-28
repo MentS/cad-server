@@ -6,6 +6,7 @@ import com.server.entity.Prodstock;
 import com.server.mapper.ProdstockMapper;
 import com.server.utils.ApiResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2019-09-26
  */
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/prodstock")
 public class ProdstockController {
     @Autowired

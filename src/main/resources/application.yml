@@ -52,12 +52,17 @@ spring:
       datasource:
         master:
           username: sa
-          password: root
+          #password: root
+          password: lj-123456
           driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-          url: jdbc:sqlserver://localhost:1433;databasename=LG
+          #url: jdbc:sqlserver://localhost:1433;databasename=LJ
+          url: jdbc:sqlserver://115.159.34.35:1433;databasename=HC
+          #url: jdbc:sqlserver://localhost:1433;databasename=HC
         xa:
           username: sa
-          password: root
+          #password: root
+          password: lj-123456
           driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-          url: jdbc:sqlserver://localhost:1433;databasename=xa
+          #url: jdbc:sqlserver://localhost:1433;databasename=xa
+          url: jdbc:sqlserver://115.159.34.35:1433;databasename=xa
 
